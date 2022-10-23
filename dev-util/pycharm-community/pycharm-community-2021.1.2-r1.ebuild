@@ -95,7 +95,7 @@ src_install() {
 	doins -r *
 
 	if ! use bundled-jdk; then
-		rm -r "${JRE_DIR}" || die
+		rm -r "${D}/${DIR}/${JRE_DIR}" || die
 	fi
 
 	fperms 755 "${DIR}"/bin/{format.sh,fsnotifier64,inspect.sh,ltedit.sh,pycharm.sh,printenv.py,restart.py}
